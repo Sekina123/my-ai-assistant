@@ -35,19 +35,16 @@ def save_config(key, value):
 
 st.set_page_config(page_title="研究生 AI 助手中心", layout="wide")
 
-# 深度清理界面：隐藏菜单、页眉、页脚及所有 Streamlit 官方浮窗
-hide_style = """
-    <style>
-    #MainMenu {visibility: hidden;}
-    header {visibility: hidden;}
-    footer {visibility: hidden;}
-    .stAppDeployButton {display:none;}
-    /* 针对移动端的额外隐藏 */
-    [data-testid="stStatusWidget"] {display:none;}
-    .viewerBadge_container__1QSob {display:none;}
-    </style>
-"""
-st.markdown(hide_style, unsafe_allow_html=True)
+# 仅隐藏 GitHub 图标和 Deploy 按钮，保留右侧的三点菜单（分享、设置入口）
+hide_specific_elements = """
+            <style>
+            .stAppToolbar > div:first-child a {display: none;}
+            .stAppDeployButton {display: none;}
+            footer {visibility: hidden;}
+            .stAppToolbar {right: 1rem;}
+            </style>
+            """
+st.markdown(hide_specific_elements, unsafe_allow_html=True)
 
 if 'login_status' not in st.session_state:
     st.session_state.login_status = False
