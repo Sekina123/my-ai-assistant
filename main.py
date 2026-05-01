@@ -35,6 +35,17 @@ def save_config(key, value):
 
 st.set_page_config(page_title="研究生 AI 助手中心", layout="wide")
 
+# 隐藏右上角的 GitHub 源码入口和 Streamlit 部署菜单
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            header {visibility: hidden;}
+            footer {visibility: hidden;}
+            .stAppDeployButton {display:none;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 if 'login_status' not in st.session_state:
     st.session_state.login_status = False
     st.session_state.user_info = None
