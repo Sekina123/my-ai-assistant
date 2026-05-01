@@ -35,15 +35,15 @@ def save_config(key, value):
 
 st.set_page_config(page_title="研究生 AI 助手中心", layout="wide")
 
-hide_elements = """
-    <style>
-    .stAppDeployButton {display: none !important;}
-    a[href*="github.com"] {display: none !important;}
-    button[title*="Edit"] {display: none !important;}
-    button[title*="Star"] {display: none !important;}
-    footer {visibility: hidden;}
-    </style>
-"""
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            header {visibility: hidden;}
+            footer {visibility: hidden;}
+            .stAppDeployButton {display:none;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 if 'login_status' not in st.session_state:
