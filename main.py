@@ -12,7 +12,7 @@ with st.sidebar:
 
 api_key = st.secrets.get("DEEPSEEK_API_KEY")
 
-if not access_password or access_password != "123456":
+if not access_password or access_password != "sk-2dd85250bb474026a1592d3dce1d6376":
     st.title("🤖 我的学生 AI 助手")
     st.warning("请在左侧侧边栏输入正确的访问口令以继续。")
     st.stop()
