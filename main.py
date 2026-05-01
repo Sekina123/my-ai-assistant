@@ -10,7 +10,7 @@ with st.sidebar:
     access_password = st.text_input("请输入访问口令", type="password")
     st.info("请输入班级统一口令以开启 AI 助手服务。")
 
-if access_password != "123456":
+if access_password != "sk-2dd85250bb474026a1592d3dce1d6376":
     st.warning("口令错误或未输入，请联系管理员获取口令。")
     st.stop()
 
