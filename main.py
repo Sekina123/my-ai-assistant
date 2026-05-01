@@ -37,33 +37,13 @@ st.set_page_config(page_title="研究生 AI 助手中心", layout="wide")
 
 hide_elements = """
     <style>
-    /* 1. 隐藏蓝色的 Deploy 按钮 */
-    .stAppDeployButton {
-        display: none !important;
-    }
-
-    /* 2. 隐藏右上角的 GitHub 图标 */
-    a[href*="github.com"] {
-        display: none !important;
-    }
-
-    /* 3. 隐藏编辑按钮（那个小铅笔图标） */
-    button[title*="Edit"] {
-        display: none !important;
-    }
-    
-    /* 4. 隐藏星标图标（如果有的话） */
-    button[title*="Star"] {
-        display: none !important;
-    }
-
-    /* 5. 隐藏底部页脚 */
-    footer {
-        visibility: hidden;
-    }
+    .stAppDeployButton {display: none !important;}
+    a[href*="github.com"] {display: none !important;}
+    button[title*="Edit"] {display: none !important;}
+    button[title*="Star"] {display: none !important;}
+    footer {visibility: hidden;}
     </style>
 """
-st.markdown(hide_elements, unsafe_allow_html=True)
 
 
 if 'login_status' not in st.session_state:
